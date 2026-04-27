@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gaytri Gupta — MBA Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --c:#FDF6EC;--cw:#FFFAF5;
+  --t:#C05A30;--tl:#E07050;--tp:#F5DDD3;
+  --a:#D4904A;--ap:#FDF0D5;
+  --s:#6A9E6E;--sp:#E4F0E5;
+  --p:#7A4A8A;--pp:#F2E8F5;
+  --b:#2C7A7A;--bp:#E0F0F0;
+  --ink:#251A14;--il:#5A4035;--mu:#9A8070;--br:#E8D8CA;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--c);color:var(--ink);overflow-x:hidden}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.5;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E")}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;
+  justify-content:space-between;padding:.9rem 2.5rem;
+  background:rgba(253,246,236,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--br)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--t);text-decoration:none}
+.nl{display:flex;gap:1.8rem;list-style:none}
+.nl a{font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--il);text-decoration:none;transition:color .2s}
+.nl a:hover{color:var(--t)}
+
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;
+  padding:7rem 2.5rem 4rem;gap:3rem;position:relative;overflow:hidden}
+.hblob{position:absolute;right:-14rem;top:50%;transform:translateY(-50%);width:680px;height:680px;
+  border-radius:50%;background:radial-gradient(circle at 35% 35%,#F5DDD3,#FDF0D5 55%,transparent 75%);
+  pointer-events:none;z-index:0}
+.ht{position:relative;z-index:1;animation:up .9s ease both}
+.eye{display:inline-flex;align-items:center;gap:.55rem;font-size:.7rem;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--t);margin-bottom:1.2rem}
+.eye::before{content:'';width:22px;height:1.5px;background:var(--t)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5.5vw,5.6rem);
+  font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+h1 em{font-style:italic;color:var(--t)}
+.tl{font-size:.98rem;color:var(--il);font-weight:300;line-height:1.72;max-width:470px;margin:1.1rem 0 1.9rem}
+.tl strong{color:var(--ink);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.9rem}
+.chip{font-size:.69rem;font-weight:500;padding:.26rem .75rem;border-radius:100px}
+.ct{background:var(--tp);color:var(--t)}.ca{background:var(--ap);color:#8A5A10}
+.cs{background:var(--sp);color:#3A6A3E}.cp{background:var(--pp);color:var(--p)}
+.cb{background:var(--bp);color:var(--b)}
+.ctas{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.4rem;padding:.72rem 1.5rem;
+  border-radius:100px;font-size:.8rem;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:all .22s}
+.bp{background:var(--t);color:#fff;box-shadow:0 4px 16px rgba(192,90,48,.24)}
+.bp:hover{background:var(--tl);transform:translateY(-2px);box-shadow:0 8px 24px rgba(192,90,48,.3)}
+.bo{background:transparent;color:var(--ink);border:1.5px solid var(--br)}
+.bo:hover{border-color:var(--t);color:var(--t);transform:translateY(-2px)}
+
+.hs{position:relative;z-index:1;display:flex;flex-direction:column;gap:.85rem;animation:up .9s .15s ease both}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.sc{background:#fff;border:1px solid var(--br);border-radius:16px;padding:1.1rem 1.2rem;transition:transform .2s,box-shadow .2s}
+.sc:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(37,26,20,.08)}
+.sn{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:700;letter-spacing:-.03em;line-height:1;margin-bottom:.18rem}
+.sl{font-size:.71rem;color:var(--mu);line-height:1.4}
+.sc.ct .sn{color:var(--t)}.sc.ca .sn{color:#8A5A10}.sc.cs .sn{color:var(--s)}.sc.cp .sn{color:var(--p)}
+.wb{background:var(--ink);color:#fff;border-radius:13px;padding:.95rem 1.2rem;display:flex;align-items:center;gap:.8rem}
+.wi{width:38px;height:38px;border-radius:50%;background:var(--a);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+.wt strong{display:block;font-size:.85rem;font-weight:500;margin-bottom:.08rem}
+.wt span{font-size:.7rem;color:rgba(255,255,255,.5)}
+
+section{padding:5.5rem 2.5rem}
+.si{max-width:1060px;margin:0 auto}
+.se{display:flex;align-items:center;gap:.55rem;font-size:.68rem;font-weight:500;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--t);margin-bottom:.85rem}
+.se::before{content:'';width:20px;height:1.5px;background:var(--t)}
+h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3vw,2.8rem);
+  font-weight:700;letter-spacing:-.025em;line-height:1.1;color:var(--ink);margin-bottom:.75rem}
+h2 em{font-style:italic;color:var(--t)}
+.sd{font-size:.92rem;color:var(--il);font-weight:300;line-height:1.72;max-width:550px;margin-bottom:2.6rem}
+
+/* ABOUT */
+.about{background:var(--cw);border-top:1px solid var(--br);border-bottom:1px solid var(--br)}
+.ag{display:grid;grid-template-columns:230px 1fr;gap:4rem;align-items:start}
+.sl2{position:sticky;top:5.5rem}
+.av{width:130px;height:130px;border-radius:50%;
+  background:linear-gradient(135deg,var(--tp),var(--ap));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;color:var(--t);
+  margin-bottom:1rem;border:2px solid var(--tp)}
+.an{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--ink);margin-bottom:.18rem}
+.ar{font-size:.77rem;color:var(--mu);line-height:1.5;margin-bottom:.9rem}
+.cs2{display:flex;flex-direction:column;gap:.38rem}
+.ca2{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:var(--il);text-decoration:none;transition:color .2s}
+.ca2:hover{color:var(--t)}
+.cd{width:5px;height:5px;border-radius:50%;background:var(--t);flex-shrink:0}
+.bio{font-size:.95rem;line-height:1.78;color:var(--il);font-weight:300;margin-bottom:1.8rem}
+.bio strong{color:var(--ink);font-weight:500}
+.skr{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.sk{background:var(--c);border:1px solid var(--br);border-radius:11px;padding:.9rem 1rem}
+.skt{font-size:.66rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--t);margin-bottom:.5rem}
+.pls{display:flex;flex-wrap:wrap;gap:.28rem}
+.pl{font-size:.68rem;padding:.18rem .58rem;border-radius:100px;background:#fff;border:1px solid var(--br);color:var(--il)}
+
+/* TIMELINE */
+.timeline{max-width:740px;position:relative}
+.timeline::before{content:'';position:absolute;left:0;top:.5rem;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--t),var(--a),var(--s),var(--p));border-radius:2px}
+.ti{padding-left:2.1rem;padding-bottom:2.6rem;position:relative}
+.ti::before{content:'';position:absolute;left:-5px;top:.45rem;width:12px;height:12px;
+  border-radius:50%;background:var(--t);border:2.5px solid var(--c);box-shadow:0 0 0 3px var(--tp)}
+.ti:nth-child(2)::before{background:var(--a);box-shadow:0 0 0 3px var(--ap)}
+.ti:nth-child(3)::before{background:var(--s);box-shadow:0 0 0 3px var(--sp)}
+.ti:nth-child(4)::before{background:var(--p);box-shadow:0 0 0 3px var(--pp)}
+.tp2{font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.32rem}
+.tr{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:.12rem}
+.tc{font-size:.85rem;color:var(--t);font-weight:500;margin-bottom:.7rem}
+.tu{list-style:none;display:flex;flex-direction:column;gap:.38rem}
+.tu li{font-size:.83rem;color:var(--il);font-weight:300;line-height:1.55;display:flex;gap:.5rem}
+.tu li::before{content:'→';color:var(--t);font-size:.7rem;flex-shrink:0;margin-top:.14rem}
+
+/* PROJECTS */
+.projects{background:var(--cw);border-top:1px solid var(--br)}
+.fts{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.ft{font-size:.73rem;font-weight:500;padding:.35rem .95rem;border-radius:100px;
+  border:1.5px solid var(--br);background:transparent;color:var(--il);cursor:pointer;transition:all .18s}
+.ft:hover,.ft.on{background:var(--t);color:#fff;border-color:var(--t)}
+.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1.2rem}
+.pc{background:#fff;border:1px solid var(--br);border-radius:20px;padding:1.6rem;
+  position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.pc.hidden{display:none}
+.pc:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(37,26,20,.09)}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.pc.finance::before{background:linear-gradient(90deg,var(--t),var(--a))}
+.pc.strategy::before{background:linear-gradient(90deg,var(--s),#9ACA9E)}
+.pc.digital::before{background:linear-gradient(90deg,var(--b),#8ACACA)}
+.pc.marketing::before{background:linear-gradient(90deg,var(--p),#B07AB0)}
+.pc.innovation::before{background:linear-gradient(90deg,var(--a),#F5C878)}
+.pcat{font-size:.64rem;font-weight:500;letter-spacing:.11em;text-transform:uppercase;margin-bottom:.6rem}
+.pc.finance .pcat{color:var(--t)}.pc.strategy .pcat{color:var(--s)}
+.pc.digital .pcat{color:var(--b)}.pc.marketing .pcat{color:var(--p)}.pc.innovation .pcat{color:#8A5A10}
+.ptit{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.45rem;line-height:1.22}
+.pdesc{font-size:.81rem;color:var(--il);line-height:1.65;font-weight:300;margin-bottom:1.1rem;flex:1}
+.ptgs{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1.1rem}
+.ptg{font-size:.64rem;padding:.18rem .58rem;border-radius:100px;background:var(--c);border:1px solid var(--br);color:var(--il)}
+.pf{display:flex;align-items:center;gap:.45rem;font-size:.74rem;font-weight:500;border-top:1px solid var(--br);padding-top:.9rem}
+.pc.finance .pf{color:var(--t)}.pc.strategy .pf{color:var(--s)}
+.pc.digital .pf{color:var(--b)}.pc.marketing .pf{color:var(--p)}.pc.innovation .pf{color:#8A5A10}
+.pf::before{content:'★';font-size:.62rem}
+.collab{font-size:.64rem;color:var(--mu);margin-bottom:.5rem}
+.collab::before{content:'👥 '}
+
+/* EDU */
+.eg{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;max-width:840px}
+.ec{background:#fff;border:1px solid var(--br);border-radius:16px;padding:1.5rem;
+  position:relative;overflow:hidden;transition:transform .2s}
+.ec:hover{transform:translateY(-3px)}
+.ec::after{content:'';position:absolute;bottom:-28px;right:-28px;width:72px;height:72px;border-radius:50%;background:var(--tp);opacity:.4}
+.ey{font-size:.66rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:.45rem}
+.ed{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:700;color:var(--ink);margin-bottom:.22rem;position:relative;z-index:1}
+.es{font-size:.8rem;color:var(--t);font-weight:500;margin-bottom:.35rem}
+.edt{font-size:.74rem;color:var(--mu)}
+.cb2{display:inline-flex;align-items:center;gap:.38rem;background:var(--ink);color:#fff;
+  padding:.42rem .95rem;border-radius:100px;font-size:.72rem;font-weight:500;margin-top:.9rem}
+.cb2 span{color:var(--a)}
+.sp2{grid-column:span 2}
+
+/* LINKEDIN SECTION */
+.li-sec{background:var(--ink);color:#fff}
+.li-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2rem}
+.ls{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.3rem}
+.lsn{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--a);line-height:1;margin-bottom:.45rem}
+.lst{font-size:.85rem;font-weight:500;margin-bottom:.35rem}
+.lsd{font-size:.76rem;color:rgba(255,255,255,.5);line-height:1.55;font-weight:300}
+.lsd code{background:rgba(255,255,255,.1);padding:.1rem .35rem;border-radius:4px;font-size:.7rem}
+.lla{display:inline-flex;align-items:center;gap:.45rem;margin-top:1.5rem;background:var(--t);
+  color:#fff;padding:.62rem 1.35rem;border-radius:100px;font-size:.8rem;font-weight:500;text-decoration:none;transition:all .2s}
+.lla:hover{background:var(--tl);transform:translateY(-2px)}
+
+footer{background:var(--ink);color:#fff;padding:4rem 2.5rem;text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.06)}
+footer::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);
+  width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(192,90,48,.11),transparent 70%);pointer-events:none}
+.fe{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tl);margin-bottom:.75rem}
+.ft2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.7rem,3.2vw,2.8rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.55rem}
+.ft2 em{font-style:italic;color:var(--a)}
+.fs{font-size:.86rem;color:rgba(255,255,255,.42);font-weight:300;margin-bottom:1.9rem}
+.fls{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap;margin-bottom:2.4rem}
+.fl{display:flex;align-items:center;gap:.38rem;font-size:.76rem;color:rgba(255,255,255,.6);
+  text-decoration:none;border:1px solid rgba(255,255,255,.13);padding:.48rem 1.05rem;border-radius:100px;transition:all .2s}
+.fl:hover{color:#fff;border-color:var(--t)}
+.fb{font-size:.7rem;color:rgba(255,255,255,.26);border-top:1px solid rgba(255,255,255,.07);padding-top:1.7rem;line-height:1.7}
+
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.vis{opacity:1;transform:none}
+
+@media(max-width:860px){
+  nav{padding:.8rem 1.3rem}.nl{display:none}
+  .hero{grid-template-columns:1fr;padding:6.5rem 1.4rem 3rem}
+  .hblob,.hs{display:none}
+  section{padding:3.5rem 1.4rem}
+  .ag{grid-template-columns:1fr;gap:2rem}.sl2{position:static}
+  .skr,.eg{grid-template-columns:1fr}.sp2{grid-column:span 1}
+  .li-steps{grid-template-columns:1fr 1fr}
+  footer{padding:3rem 1.4rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="#">Gaytri Gupta</a>
+  <ul class="nl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#linkedin">LinkedIn Guide</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hblob"></div>
+  <div class="ht">
+    <div class="eye">MBA Portfolio · IIIT Lucknow · MDB25030 · 2025–2027</div>
+    <h1>Gaytri<br/><em>Gupta</em></h1>
+    <p class="tl">Finance strategist &amp; capital markets practitioner — blending <strong>quantitative rigor</strong> with <strong>digital business thinking</strong> across equity dealing, portfolio management &amp; corporate finance.</p>
+    <div class="chips">
+      <span class="chip ct">Portfolio Management</span>
+      <span class="chip ca">Equity &amp; Derivatives</span>
+      <span class="chip cs">Financial Modelling</span>
+      <span class="chip cp">ESG Finance</span>
+      <span class="chip cb">Digital Transformation</span>
+      <span class="chip ct">Capital Budgeting</span>
+    </div>
+    <div class="ctas">
+      <a class="btn bp" href="#projects">View All 9 Projects ↓</a>
+      <a class="btn bo" href="mailto:guptagaytri432@gmail.com">Get in Touch</a>
+    </div>
+  </div>
+  <div class="hs">
+    <div class="sg">
+      <div class="sc ct"><div class="sn">9</div><div class="sl">MBA assignments in portfolio</div></div>
+      <div class="sc ca"><div class="sn">200+</div><div class="sl">Daily trades executed at Rudra Shares</div></div>
+      <div class="sc cs"><div class="sn">₹1Cr</div><div class="sl">Portfolio assets managed at Geojit</div></div>
+      <div class="sc cp"><div class="sn">Top 1%</div><div class="sl">IIT BHU National Case Competition</div></div>
+    </div>
+    <div class="wb">
+      <div class="wi">🏆</div>
+      <div class="wt">
+        <strong>National Finalist — Fusion Forge</strong>
+        <span>IIT BHU · Top 1% of 500+ participants nationwide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="si ag">
+    <div class="sl2">
+      <div class="av">GG</div>
+      <div class="an">Gaytri Gupta</div>
+      <div class="ar">MBA – Digital Business<br/>IIIT Lucknow · MDB25030 · 2025–27</div>
+      <div class="cs2">
+        <a class="ca2" href="mailto:guptagaytri432@gmail.com"><span class="cd"></span>guptagaytri432@gmail.com</a>
+        <a class="ca2" href="https://linkedin.com/in/financegaytri" target="_blank"><span class="cd"></span>linkedin.com/in/financegaytri</a>
+        <a class="ca2" href="#"><span class="cd"></span>+91-6387434877</a>
+        <a class="ca2" href="#"><span class="cd"></span>Lucknow, India</a>
+      </div>
+    </div>
+    <div>
+      <div class="se">About Me</div>
+      <h2>Finance meets<br/><em>Digital Strategy</em></h2>
+      <p class="bio">I am an <strong>MBA candidate in Digital Business</strong> at IIIT Lucknow (MDB25030), with a B.Com (Hons.) in Accounting &amp; Finance from the University of Lucknow (75%). My career spans <strong>equity dealing, portfolio management, and corporate finance</strong> — giving me a rare combination of live markets experience and academic depth.<br/><br/>I have managed client portfolios worth <strong>₹84L–1Cr at Geojit</strong>, executed 200+ daily equity and derivatives trades at Rudra Shares, and supported P&amp;L and forecasting analysis at <strong>Hindalco Industries (Aditya Birla Group)</strong>. I hold a <strong>NISM Series VIII – Equity Derivatives</strong> certification and am a <strong>Top 1% national finalist</strong> at the IIT BHU Fusion Forge case competition (500+ participants).</p>
+      <div class="skr rv">
+        <div class="sk"><div class="skt">Finance &amp; Markets</div><div class="pls"><span class="pl">Financial Modelling</span><span class="pl">Valuation</span><span class="pl">Portfolio Mgmt</span><span class="pl">Capital Budgeting</span><span class="pl">Risk Management</span><span class="pl">Ratio Analysis</span><span class="pl">NPV · IRR</span><span class="pl">Equity Research</span></div></div>
+        <div class="sk"><div class="skt">Digital &amp; Strategy</div><div class="pls"><span class="pl">Digital Transformation</span><span class="pl">ESG Finance</span><span class="pl">SCM Strategy</span><span class="pl">Knowledge Management</span><span class="pl">Innovation</span><span class="pl">AI &amp; Platforms</span></div></div>
+        <div class="sk"><div class="skt">Tools</div><div class="pls"><span class="pl">Advanced Excel</span><span class="pl">Excel Solver</span><span class="pl">Power BI</span><span class="pl">MS PowerPoint</span><span class="pl">Pivot Tables</span></div></div>
+        <div class="sk"><div class="skt">Management</div><div class="pls"><span class="pl">Project Planning</span><span class="pl">Stakeholder Mgmt</span><span class="pl">Agile</span><span class="pl">Market Research</span><span class="pl">AI Safety</span><span class="pl">Communication</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="si">
+    <div class="se">Career Journey</div>
+    <h2>Work <em>Experience</em></h2>
+    <p class="sd">Three formative roles across portfolio management, equity dealing, and corporate finance — building a 360° view of capital markets.</p>
+    <div class="timeline">
+      <div class="ti rv"><div class="tp2">May 2025 – Jun 2025</div><div class="tr">Portfolio Manager Trainee</div><div class="tc">Geojit Financial Limited</div><ul class="tu"><li>Managed 50+ client portfolios (₹84L–1Cr) across equities and derivatives</li><li>Sector and company analysis across 12+ industries for portfolio construction</li><li>Optimised asset allocation with Excel Solver — improved returns by 8–10%</li><li>Ensured SEBI compliance through trading and risk team coordination</li></ul></div>
+      <div class="ti rv"><div class="tp2">Sep 2023 – Jul 2024</div><div class="tr">Equity Dealer</div><div class="tc">Rudra Shares &amp; Stock Brokers Ltd.</div><ul class="tu"><li>Executed 200+ equities and derivatives trades daily for 30+ client accounts</li><li>Managed portfolios of ₹42L–84L focusing on risk-adjusted returns</li><li>Monitored stop-loss levels, margin exposure and derivatives risk — improved returns by 10%</li></ul></div>
+      <div class="ti rv"><div class="tp2">Jun 2023 – Aug 2023</div><div class="tr">Finance Intern</div><div class="tc">Hindalco Industries Ltd. (Aditya Birla Group)</div><ul class="tu"><li>Analysed P&amp;L, balance sheet, and cash flow statements for three business units</li><li>Benchmarked performance against Vedanta using 10+ financial and operational KPIs</li><li>Supported budgeting, forecasting, variance and ratio analysis — improved reporting accuracy by 12%</li></ul></div>
+      <div class="ti rv"><div class="tp2">2025 – Present</div><div class="tr">Placement Committee Member</div><div class="tc">IIIT Lucknow — MBA Digital Business</div><ul class="tu"><li>Coordinating industry interactions and recruitment drives for the MBA cohort</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="si">
+    <div class="se">MBA Projects &amp; Case Studies</div>
+    <h2>Academic <em>Portfolio</em></h2>
+    <p class="sd">9 real assignments from my MBA journey at IIIT Lucknow — spanning finance, strategy, digital transformation, marketing, and innovation management.</p>
+
+    <div class="fts">
+      <button class="ft on" onclick="filter('all',this)">All Projects (9)</button>
+      <button class="ft" onclick="filter('finance',this)">💰 Finance (3)</button>
+      <button class="ft" onclick="filter('strategy',this)">♟ Strategy &amp; SCM (2)</button>
+      <button class="ft" onclick="filter('digital',this)">🌐 Digital (2)</button>
+      <button class="ft" onclick="filter('innovation',this)">💡 Innovation (1)</button>
+      <button class="ft" onclick="filter('marketing',this)">📣 Marketing (1)</button>
+    </div>
+
+    <div class="pg" id="pg">
+
+      <div class="pc finance rv">
+        <div class="pcat">Finance · Capital Budgeting · M&amp;A</div>
+        <div class="collab">With Gungoon Bhosle — MDB25029</div>
+        <div class="ptit">HUL Capital Budgeting — Minimalist Acquisition (₹2,955 Cr)</div>
+        <div class="pdesc">Full-scale capital budgeting analysis of HUL's real ₹2,955 Cr acquisition of Minimalist skincare. Built from real BSE, NSE &amp; HUL Annual Report data. Covers NPV, IRR, Payback Period, sensitivity and risk analysis, and strategic rationale. HUL: Revenue ₹59,579 Cr, PAT ₹10,277 Cr, EBITDA ~24%, Market Cap ~₹5.3 lakh Cr.</div>
+        <div class="ptgs"><span class="ptg">NPV · IRR</span><span class="ptg">M&amp;A Analysis</span><span class="ptg">Financial Modelling</span><span class="ptg">Sensitivity Analysis</span><span class="ptg">HUL</span><span class="ptg">FMCG</span></div>
+        <div class="pf">Financial Management · MBA · IIIT Lucknow · 2025–26</div>
+      </div>
+
+      <div class="pc finance rv">
+        <div class="pcat">Finance · Capital Budgeting · Banking</div>
+        <div class="collab">With Gungoon Bhosle — MDB25029</div>
+        <div class="ptit">RBL Bank Capital Budgeting — NPV · IRR · Profitability Index</div>
+        <div class="pdesc">Capital budgeting analysis of RBL Bank using all three major discounting techniques. RBL staged a dramatic turnaround — PAT grew 653% in FY2023, 37% in FY2024. Covers Net Present Value, Internal Rate of Return, and Profitability Index on real data: Market Cap ₹18,938 Cr, Net Advances ₹83,990 Cr (+19.7% YoY), NIM 5.3%.</div>
+        <div class="ptgs"><span class="ptg">NPV</span><span class="ptg">IRR</span><span class="ptg">Profitability Index</span><span class="ptg">Banking</span><span class="ptg">Discounting</span><span class="ptg">RBL Bank</span></div>
+        <div class="pf">Financial Management · MBA · IIIT Lucknow</div>
+      </div>
+
+      <div class="pc finance rv">
+        <div class="pcat">Finance · Ratio Analysis · Defence PSU</div>
+        <div class="ptit">HAL (Hindustan Aeronautics Limited) — Comprehensive Ratio Analysis FY2024</div>
+        <div class="pdesc">15+ ratio analysis of HAL (Navratna PSU) for FY2023–24. Revenue ₹30,381 Cr (+12.8%), PAT ₹7,595 Cr (+30.7%), completely debt-free (D/E = 0.00). Current Ratio 1.73, Quick Ratio 1.37, Cash Ratio 0.73 — all benchmarked against ideal standards with full narrative interpretation across liquidity, leverage, activity, and profitability dimensions.</div>
+        <div class="ptgs"><span class="ptg">Liquidity Ratios</span><span class="ptg">Leverage Ratios</span><span class="ptg">Profitability</span><span class="ptg">HAL</span><span class="ptg">Defence PSU</span><span class="ptg">FY2024</span></div>
+        <div class="pf">Financial Accounting · MBA · IIIT Lucknow</div>
+      </div>
+
+      <div class="pc strategy rv">
+        <div class="pcat">Strategy · Supply Chain · E-Business</div>
+        <div class="collab">Team of 6 · Speaker: Slides 1–4 of 17</div>
+        <div class="ptit">Zara Agile SCM — Supply Chain Management in E-Business</div>
+        <div class="pdesc">17-slide MBA consulting-style presentation on Zara's world-class agile supply chain. 2-week design-to-shelf lead time vs 20–26 weeks for H&amp;M and Gap. Covers vertical integration, 48-hr feedback loops, RFID-enabled 99% inventory accuracy, and competitive advantage. Strategic frameworks: SCOR Model, Porter's Value Chain, SWOT. Competitor analysis vs SHEIN.</div>
+        <div class="ptgs"><span class="ptg">SCOR Model</span><span class="ptg">Porter's Value Chain</span><span class="ptg">SWOT</span><span class="ptg">Agile SCM</span><span class="ptg">Vertical Integration</span><span class="ptg">Fast Fashion</span></div>
+        <div class="pf">E-Business &amp; SCM · MBA · IIIT Lucknow · Apr 2026</div>
+      </div>
+
+      <div class="pc strategy rv">
+        <div class="pcat">Strategy · ESG · Sustainable Finance · FinTech</div>
+        <div class="collab">With Aksha Qamar — MDB25021</div>
+        <div class="ptit">GreenBridge — AI-Powered Sustainable Finance Platform for Indian MSMEs</div>
+        <div class="pdesc">ESG readiness assessment prototype for India's 63M+ MSMEs. Green finance market growing at 15.2% CAGR to USD 2.34B by 2033. Platform delivers ESG eligibility score in 10 minutes — addressing the critical gap where 92% of SMEs see ESG as priority but only 37% have a defined roadmap. Classifies firms for green bonds, sustainability-linked finance, and ESG capital access.</div>
+        <div class="ptgs"><span class="ptg">ESG Finance</span><span class="ptg">MSME</span><span class="ptg">AI Platform</span><span class="ptg">Sustainable Finance</span><span class="ptg">Green Bonds</span><span class="ptg">India</span></div>
+        <div class="pf">Academic Project · IIIT Lucknow · 2026</div>
+      </div>
+
+      <div class="pc digital rv">
+        <div class="pcat">Digital Transformation · Policy · India — Individual Assignment</div>
+        <div class="ptit">India in the Digital Age — Benefits of Digitalisation &amp; Future Prospects</div>
+        <div class="pdesc">Individual assignment (30 marks) covering India's sweeping digital transformation: UPI at 13B+ monthly transactions (world's largest real-time payments market), Aadhaar for 1.38B residents, 100+ unicorns, IT exports USD 250B, eSanjeevani 300M consultations, eNAM linking 18M farmers. Future prospects: AI, 5G, DPI export to 50+ countries, circular economy, and Digital Personal Data Protection Act 2023.</div>
+        <div class="ptgs"><span class="ptg">UPI &amp; Fintech</span><span class="ptg">e-Governance</span><span class="ptg">Startup Ecosystem</span><span class="ptg">AI Policy</span><span class="ptg">5G</span><span class="ptg">DPI</span><span class="ptg">Cybersecurity</span></div>
+        <div class="pf">Digital Transformation Module · MDB25030 · Apr 2026</div>
+      </div>
+
+      <div class="pc digital rv">
+        <div class="pcat">Digital Transformation · Business Strategy — Group Assignment</div>
+        <div class="ptit">Digitally Transforming a Traditional Offline Indian Business</div>
+        <div class="pdesc">Group project (30 marks) designing a comprehensive digital transformation plan for a selected traditional offline business in India. Covers digital strategy framework, technology roadmap, omnichannel customer experience design, change management, and financial ROI modelling. Faculty assignment: Digital Transformation Module, Nikhil Prabhakar, IIIT Lucknow.</div>
+        <div class="ptgs"><span class="ptg">Digital Strategy</span><span class="ptg">Technology Roadmap</span><span class="ptg">Change Management</span><span class="ptg">CX Design</span><span class="ptg">ROI Modelling</span><span class="ptg">India Market</span></div>
+        <div class="pf">Digital Transformation Module · IIIT Lucknow · Apr 2026</div>
+      </div>
+
+      <div class="pc innovation rv">
+        <div class="pcat">Innovation Management · Knowledge Management · Case Study</div>
+        <div class="ptit">Toyota Prius — Radical Innovation &amp; Knowledge Management</div>
+        <div class="pdesc">Case study analysis of Toyota's radical innovation process in developing the Prius — the world's first mass-produced hybrid vehicle, launched December 1997. Applies Nonaka &amp; Takeuchi's SECI Model (Socialisation → Externalisation → Combination → Internalisation), the Innovation Value Chain (Idea Generation → Conversion → Diffusion), and the role of culture, vision, and leadership. Toyota developed 300+ patents; completed in 15 months vs industry average of 4 years.</div>
+        <div class="ptgs"><span class="ptg">SECI Model</span><span class="ptg">Radical Innovation</span><span class="ptg">Knowledge Mgmt</span><span class="ptg">Toyota Prius</span><span class="ptg">Nonaka &amp; Takeuchi</span><span class="ptg">Innovation Value Chain</span></div>
+        <div class="pf">Innovation &amp; Knowledge Management · MBA · IIIT Lucknow</div>
+      </div>
+
+      <div class="pc marketing rv">
+        <div class="pcat">Marketing Management · Brand Strategy · Social Impact</div>
+        <div class="ptit">WE2 — #BeyondTheCheckbox: Authentic Connections Campaign</div>
+        <div class="pdesc">Brand strategy and advertising campaign for WE2, a progressive matchmaking platform for urban India (ages 21–40, metro professionals). Campaign challenges traditional matrimonial stereotypes reducing people to caste, skin tone, and height metrics. Tagline: "Love Doesn't See Labels. Only WE2 Does." Covers psychographic segmentation, positioning strategy, channel mix, and social content for progressive Indian consumers.</div>
+        <div class="ptgs"><span class="ptg">Brand Positioning</span><span class="ptg">Campaign Strategy</span><span class="ptg">Consumer Insights</span><span class="ptg">Psychographics</span><span class="ptg">Social Impact</span><span class="ptg">India</span></div>
+        <div class="pf">Marketing Management · MBA · IIIT Lucknow</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="si">
+    <div class="se">Education &amp; Credentials</div>
+    <h2>Academic <em>Foundation</em></h2>
+    <p class="sd">Finance undergraduate + MBA in Digital Business + NISM certification = a full-stack finance professional.</p>
+    <div class="eg rv">
+      <div class="ec"><div class="ey">2025 – 2027 · Current</div><div class="ed">MBA – Digital Business</div><div class="es">IIIT Lucknow</div><div class="edt">Placement Committee Member · Roll No. MDB25030</div><div class="cb2"><span>●</span> Currently Enrolled</div></div>
+      <div class="ec"><div class="ey">2021 – 2024</div><div class="ed">B.Com (Hons.) – Accounting &amp; Finance</div><div class="es">University of Lucknow</div><div class="edt">Aggregate: 75% · Specialisation in Accounting &amp; Finance</div></div>
+      <div class="ec sp2"><div class="ey">Certification · Valid 2023–2026</div><div class="ed">NISM Series VIII – Equity Derivatives</div><div class="es">National Institute of Securities Markets (NISM) · SEBI-mandated</div><div class="edt">Demonstrates live markets competency in F&amp;O segments · Required for all equity derivatives dealing and advisory roles in India · Covers options, futures, index derivatives, and risk management frameworks</div><div class="cb2"><span>✓</span> Verified · Active Certification</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKEDIN GUIDE -->
+<section class="li-sec" id="linkedin">
+  <div class="si">
+    <div class="se" style="color:rgba(255,255,255,.45)">How to Go Live on LinkedIn</div>
+    <h2 style="color:#fff">Share your portfolio<br/><em>in 4 simple steps</em></h2>
+    <p style="font-size:.88rem;color:rgba(255,255,255,.45);font-weight:300;line-height:1.72;max-width:520px;margin-bottom:0">Host this HTML file free on GitHub Pages — takes 5 minutes, no coding required. Then paste the link on LinkedIn.</p>
+    <div class="li-steps">
+      <div class="ls"><div class="lsn">01</div><div class="lst">Upload to GitHub</div><div class="lsd">Create a free account at github.com → click <strong>New Repository</strong> → name it <code>portfolio</code> → upload the <code>index.html</code> file you downloaded here.</div></div>
+      <div class="ls"><div class="lsn">02</div><div class="lst">Enable GitHub Pages</div><div class="lsd">In your repo → <strong>Settings</strong> → <strong>Pages</strong> → Source: select <strong>main branch</strong> → click Save. Site goes live in about 60 seconds.</div></div>
+      <div class="ls"><div class="lsn">03</div><div class="lst">Get your live URL</div><div class="lsd">Your portfolio will be at: <code>yourusername.github.io/portfolio</code> — copy this URL. Share it anywhere!</div></div>
+      <div class="ls"><div class="lsn">04</div><div class="lst">Add to LinkedIn</div><div class="lsd">LinkedIn Profile → Edit intro → <strong>Contact info</strong> → Add Website → paste URL, label it "MBA Portfolio". Also paste in your <strong>About section</strong> for max visibility.</div></div>
+    </div>
+    <a class="lla" href="https://github.com" target="_blank">Open GitHub to get started →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="fe">Open to Opportunities · 2026</div>
+  <div class="ft2">Let's <em>connect</em></div>
+  <p class="fs">Management Trainee · Finance Analyst · Equity Research · Wealth Management · Corporate Finance</p>
+  <div class="fls">
+    <a class="fl" href="mailto:guptagaytri432@gmail.com">✉ guptagaytri432@gmail.com</a>
+    <a class="fl" href="https://linkedin.com/in/financegaytri" target="_blank">in linkedin.com/in/financegaytri</a>
+    <a class="fl" href="tel:+916387434877">☎ +91-6387434877</a>
+  </div>
+  <div class="fb">
+    © 2026 Gaytri Gupta · MBA Portfolio · IIIT Lucknow · MDB25030<br/>
+    9 real MBA assignments · Finance · Strategy · Digital Transformation · Innovation · Marketing
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})
+},{threshold:.1});
+document.querySelectorAll('.rv').forEach((el,i)=>{
+  el.style.transitionDelay=`${(i%4)*.07}s`;
+  obs.observe(el);
+});
+function filter(cat,btn){
+  document.querySelectorAll('.ft').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.pc').forEach(c=>{
+    c.classList.toggle('hidden',cat!=='all'&&!c.classList.contains(cat));
+  });
+}
+</script>
+</body>
+</html>
